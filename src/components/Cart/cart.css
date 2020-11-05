@@ -1,0 +1,15 @@
+.cart-display{
+    position: absolute;
+    width: 500px;
+    height: calc(100vh - 56px);
+    background-color: yellow;
+    top:56px;
+    right: 0;
+    transition: 0.3s;
+    transition-delay: visibility 0.3s;
+}
+
+.cart-inactive{
+    right:-500px !important;
+    visibility: hidden;
+}
