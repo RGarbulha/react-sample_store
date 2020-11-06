@@ -59,7 +59,7 @@ function App() {
           <Home cart={cartServices} />
         )} />
         <Route exact path='/checkout' render={() => (
-          <Checkout />
+          <Checkout cart={cartServices} />
         )} />
       </Switch>
     </div>

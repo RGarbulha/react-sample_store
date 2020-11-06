@@ -19,7 +19,7 @@ const Home = (props) => {
 
     useEffect(() => {
         return () => {
-            console.log("Return")
+            props.cart.closeMenu()
         }
     }, [])
 
