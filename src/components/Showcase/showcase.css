@@ -1,5 +1,63 @@
 .display{
     width: calc(75% - 10px);
-    height: 600px;
-    background-color: green;
+    height: fit-content;
 }
+
+.showcaseList{
+    width: 100%;
+    padding: 10px 0 ;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.showcaseItem{
+    position: relative;
+    width: calc(25% - 8px);
+    height: 380px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.showcaseImage{
+    width: 100%;
+    height: 240px;
+    background-color: violet;
+}
+
+.showcaseTopNote{
+    font-style: italic;
+}
+
+.showcaseTitle{
+    font-weight: 700;
+}
+
+.showcasePrice{
+    font-weight: 500;
+}
+
+.showcaseColours{
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #7e7e7e;
+}
+
+.showcaseItem .showcaseZoom{
+    position: absolute;
+    top:0px;
+    right:0px;
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    visibility: hidden;
+}
+
+.showcaseItem:hover .showcaseZoom{
+    visibility: visible;
+}
+
