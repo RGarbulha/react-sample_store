@@ -1,5 +1,4 @@
-.sidemenu{
+.sidemenu {
     width: calc(25% - 10px);
     height: 600px;
-    background-color: green;
 }

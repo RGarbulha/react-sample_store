@@ -1,0 +1,103 @@
+[
+    {
+    "id":1,
+    "sku":"ITEM00001",
+    "title":"T-Shirt",
+    "price":15.99,
+    "note":"New",
+    "colors":["Blue","Yellow","Red","Black","White"],
+    "sizes":["XS","S","M","L"],
+    "images":[{"Cover":"12Hgz4nZVGX6S1ZuUgg2zukZthakRXv68"},{"Blue":["16XHV8GJqk7iq4IG3KWkZbaXoANT-j35n"]},{"Yellow":["10cD15tpyRiH33QGQ_EMoPok-R3hjdGoi"]},{"Red":["1qdXnQUvvMhZ9IzjdY9nftNpzP8gO1dAu"]},{"Black":["12Hgz4nZVGX6S1ZuUgg2zukZthakRXv68"]},{"White":["1v_fQhCQXyGdY05M1xwb4PUHbBkFrWWlu"]}]
+},
+    {
+    "id":2,
+    "sku":"ITEM00002",
+    "title":"Male Jeans",
+    "price": 79.99,
+    "note":"New",
+    "colors":["Blue","Black","Brown"],
+    "sizes":["S","M","L"],
+    "images":[{"Cover":""},{"Blue":[""]},{"Black":[""]},{"Brown":[""]}]
+},
+    {
+    "id":3,
+    "sku":"ITEM00003",
+    "title":"Skirt",
+    "price": 59.99,
+    "note":"New",
+    "colors":["Red"],
+    "sizes":["XXS","XS","M"],
+    "images":[{"Cover":"1maecIUFPvJH4rqjHvI-YUnSdbQ0Fpaz9"},{"Red":["1maecIUFPvJH4rqjHvI-YUnSdbQ0Fpaz9"]}]
+},
+    {
+    "id":4,
+    "sku":"ITEM00004",
+    "title":"Cap",
+    "price":12.99,
+    "note":"",
+    "colors":["Black","White"],
+    "sizes":[],
+    "images":[{"Cover":"1bGVF8BZsw_EXOnvQjBpyO8YTOv81BEu5"},{"Black":["1bGVF8BZsw_EXOnvQjBpyO8YTOv81BEu5"]},{"White":["1YXMNHWPXc65OVhvToyJdxWJGNVhWotow"]}]
+},
+
+    {
+    "id":5,
+    "sku":"ITEM00005",
+    "title":"Women Jeans",
+    "price": 79.99,
+    "note":"",
+    "colors":["Black","Blue","White"],
+    "sizes":["XXS","XS","M","L"],
+    "images":[{"Cover":"1TQyrk80srdnvqZWDWjwXbLH47l2hX2Z5"},{"Blue":["1TQyrk80srdnvqZWDWjwXbLH47l2hX2Z5"]},{"Black":["1DJ1QXN4kdFeBwA6jNzlT0HkwBy9q12dE"]},{"White":["1mvmW1xgD4Yr3k8FkMinShlpQ5VisMGU-"]}]
+},
+    {
+    "id":6,
+    "sku":"ITEM00006",
+    "title":"Women T-Shirt",
+    "price": 15.99,
+    "note":"",
+    "colors":["Blue","Yellow","Red","Black","White"],
+    "sizes":["XS","S","M","L"],
+    "images":[{"Cover":"1rkhH41FyVlPFBVaxqD-zLV1XE7zV7tGH"},{"Blue":["1AgBCRRSH6xLo7E65vafpG5ZZD0XggcBT"]},{"Yellow":["1TpoSAGLCMT55ahIVaIhun8_96rTHqRBf"]},{"Red":["155nKBeauCSpq8yyWSHbV-DkLW5zgrEDx"]},{"Black":["1j01NdCRtdjaglmdoC8pEEaf2iFMDoRx3"]},{"White":["1rkhH41FyVlPFBVaxqD-zLV1XE7zV7tGH"]}]
+},
+    {
+    "id":7,
+    "sku":"ITEM00007",
+    "title":"Touque",
+    "price":9.99,
+    "note":"",
+    "colors":["Grey","Black"],
+    "sizes":[],
+    "images":[{"Cover":"1uKLQIqPVYUtelQ4Yl5AA6T-xMLCOcTW0"},{"Grey":["1uVBpe24RayfSafFm3OrblqKomRkzyS6Q"]},{"Black":["1uKLQIqPVYUtelQ4Yl5AA6T-xMLCOcTW0"]}]
+},
+    {
+    "id":8,
+    "sku":"ITEM00008",
+    "title":"Socks",
+    "price":4.99,
+    "note":"",
+    "colors":["Grey","Black","White","Blue","Green"],
+    "sizes":["9","9.5","10","11"],
+    "images":[{"Cover":"1cGQzmjfie_hY9yZv4ua8TOfOLWT-3wEp"},{"Blue":["10exlu8MNhb87Vc2MvgqhCQHoiwnI1P9D"]},{"Green":["1WIxy7JhGLbIe8I-KQrpjWEftVnJX4dwC"]},{"Grey":["1cGQzmjfie_hY9yZv4ua8TOfOLWT-3wEp"]},{"Black":["1QpPzDJ0hZqOdQqaJMonGtvg2Lixmyf1w"]},{"White":["18z0URR9EBr4a4t3EBo9kWdL_xeX5M4y7"]}]
+},
+    {
+    "id":9,
+    "sku":"ITEM00009",
+    "title":"Men Jacket",
+    "price": 129.99,
+    "note":"",
+    "colors":["Brown"],
+    "sizes":["M","L"],
+    "images":[{"Cover":"1cvzPMPSzu-qzx2VAqwC0Xjh1Hsf1wXgI"},{"Brown":["1cvzPMPSzu-qzx2VAqwC0Xjh1Hsf1wXgI"]}]
+},
+    {
+    "id":10,
+    "sku":"ITEM00010",
+    "title":"Women Jacket",
+    "price":159.99,
+    "note":"",
+    "colors":["Black","Blue"],
+    "sizes":["S","M","L"],
+    "images":[{"Cover":"1A2RXAmwzFIe2CDJSbj2WcEsVpyWZQNIE"},{"Blue":["1sTgdom7fhVi-UVHbi8ao1bkHFMuyNvdq"]},{"Black":["1A2RXAmwzFIe2CDJSbj2WcEsVpyWZQNIE"]}]
+}
+]

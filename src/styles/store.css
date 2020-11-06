@@ -1,8 +1,7 @@
-.store{
+.store {
     display: flex;
     flex-direction: row;
     column-gap: 20px;
     width: 100%;
     height: fit-content;
-    background-color: red;
 }

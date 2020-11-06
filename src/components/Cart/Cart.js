@@ -1,29 +1,26 @@
-import {useState} from "react"
+import { useState, useEffect } from "react"
 
 import shoppingCart from "./shopping-cart.svg"
 
 import './cart.css'
 
-const Cart = (props) =>{
+const Cart = (props) => {
 
-    const [menuState, setMenuState] = useState(false)
+    var menuState = props.cart.menuState
 
-    const menuHandler = () =>{
-        setMenuState(!menuState)
-    }
+    useEffect(() => {
+    }, [menuState])
 
+    return (
+        <>
+            <div>
+                <img src={shoppingCart} alt="cart" style={{ width: 25, cursor: 'pointer' }} onClick={props.cart.menuHandler} />
+            </div>
+            <div className={menuState ? 'cart-display' : 'cart-display cart-inactive'}>
 
-
-return(
-    <>
-    <div>
-        <img src={shoppingCart} alt="cart" style={{width:25, cursor:'pointer'}} onClick={menuHandler}/>
-    </div>
-    <div className={menuState?'cart-display':'cart-display cart-inactive'}>
-
-    </div>
-    </>
-)
+            </div>
+        </>
+    )
 
 
 }
