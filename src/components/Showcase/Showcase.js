@@ -76,7 +76,9 @@ const ItemModal = (props) => {
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState();
 
-  const handleQryChange = () => {};
+  const handleQtyChange = (value) => {
+    setQuantity(value <= 10 ? value > 0 ? value : 1 : 10)
+  };
 
   const handleColorChange = (color) => {
     setSelectedColor(color);
@@ -103,7 +105,7 @@ const ItemModal = (props) => {
       //   if (Object.keys(img)[0] == selectedColor)
 
       console.log('Color', Object.keys(img)[0]);
-      return Object.keys(img)[0] == selectedColor;
+      return Object.keys(img)[0] === selectedColor;
     });
 
     console.log('image', image[0]);
@@ -162,7 +164,7 @@ const ItemModal = (props) => {
                   key={color}
                   id={color}
                   style={{ backgroundColor: getColorByName(color) }}
-                  className={selectedColor == color ? 'selectedColor' : ''}
+                  className={selectedColor === color ? 'selectedColor' : ''}
                   onClick={(e) => {
                     handleColorChange(e.target.id);
                   }}
@@ -176,7 +178,7 @@ const ItemModal = (props) => {
               <div>
                 <span>Size</span>
                 <br />
-                <select name="sizes">
+                <select name="sizes" >
                   <option value="" key="none">
                     Select
                   </option>
@@ -194,9 +196,7 @@ const ItemModal = (props) => {
                 <select
                   name="quantity"
                   value={quantity}
-                  onChange={(e) => {
-                    setQuantity(e.target.value);
-                  }}
+                  onChange={(e) => { handleQtyChange(e.target.value) }}
                 >
                   <Times
                     n={10}
@@ -223,6 +223,6 @@ const ItemModal = (props) => {
       </Modal.Body>
     </Modal>
   ) : (
-    <></>
-  );
+      <></>
+    );
 };

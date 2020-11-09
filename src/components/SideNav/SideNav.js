@@ -1,56 +1,75 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
 import "./sidenav.css";
 
-export default function SideNav() {
+export default function SideNav(props) {
+
+  const [state, setState] = useState({
+    pricesFilter: props.filters.pricesFilter,
+    colorsFilter: props.filters.colorsFilter,
+    sizesFilter: props.filters.sizesFilter,
+    orderBy: props.filters.orderBy
+  })
+
+  const resetFilters = () => {
+    props.filtersActions.handleOrderFilterChange(props.filters, "Newly Added")
+    props.filtersActions.resetFilters(props.filters)
+    setState({ ...state, orderBy: props.filters.orderBy })
+  }
+
+  useEffect(() => {
+  }, [])
+
   return (
     <div className="sidemenu">
-      SideNav
-      <div>
-      <select name="orderBy" id="orderBy">
-        <option value="latest">Newly Added</option>
-        <option value="low">Price: Low to High</option>
-        <option value="high">Price: High to Low</option>
-      </select>
+      <div className="sidemenu-section">
+        <select name="orderBy" id="orderBy" className="orderBy" value={state.orderBy} onChange={(e) => props.filtersActions.handleOrderFilterChange(props.filters, e.target.value)}>
+          <option value="Newly Added">Newly Added</option>
+          <option value="Low to High">Price: Low to High</option>
+          <option value="High to Low">Price: High to Low</option>
+        </select>
       </div>
-      <div>
-          <button>Reset</button>
+      <div className="sidemenu-section">
+        <button className="button" onClick={resetFilters}>Reset</button>
       </div>
-      <div>
+      <div className="sidemenu-section">
         <h4> Category </h4>
-        <ul>
-          <li>Pants</li>
-          <ul>
-            <li>Men Jeans</li>
-            <li>Women Jeans</li>
+        <div className="category-display">
+          <ul className="category-list">
+            <li><button className="category-btn">Pants</button></li>
+            <ul className="category-list">
+              <li><button className="category-btn">Men Jeans</button></li>
+              <li><button className="category-btn">Women Jeans</button></li>
+            </ul>
           </ul>
-        </ul>
+        </div>
       </div>
-      <div>
-          <h4>Price</h4>
-          <div style={{display:"flex",flexDirection:"column"}}>
-          <label htmlFor="priceFilter0"><input type="checkbox" name="priceFilter" id="priceFilter0" value="20-40"/>$20 - $40</label>
-          <label htmlFor="priceFilter1"><input type="checkbox" name="priceFilter" id="priceFilter1" value="40-60"/>$40 - $60</label>
-          <label htmlFor="priceFilter2"><input type="checkbox" name="priceFilter" id="priceFilter2" value="60-80"/>$60 - $80</label>
-          </div>
+      <div className="sidemenu-section">
+        <h4>Price</h4>
+        <div className='sidemenu-price-filter'>
+          {state.pricesFilter.map((filter, i) => (
+            <label htmlFor={"priceFilter" + i}><input type="radio" name="priceFilter" id={"priceFilter" + i} value={filter.value} />{" "}{filter.text}</label>
+          ))}
+        </div>
       </div>
-      <div>
-          <h4>Color</h4>
-          <div style={{display:"flex",flexDirection:"row"}}>
-              <div id="black" style={{width:50,height:50,backgroundColor:"#000",borderRadius:25}}></div>
-              <div id="blue"  style={{width:50,height:50,backgroundColor:"#00f",borderRadius:25}}></div>
-          </div>
+      <div className="sidemenu-section">
+        <h4>Color</h4>
+        <div className={"sidemenu-color-display"}>
+          {state.colorsFilter.map((color, i) => (
+            <div id={"colorFilter" + i} className={color.active === true ? "active-color-filter" : ""} style={{ backgroundColor: color.color }} onClick={() => props.filtersActions.handleColorFilterChange(props.filters, color)}></div>
+          ))}
+        </div>
       </div>
-      <div>
-          <h4>Size</h4>
-          <div>
-          <label htmlFor="sizeFilter0"><input type="checkbox" name="priceFilter" id="priceFilter2" value="60-80"/>XXS</label>
-          <label htmlFor="sizeFilter0"><input type="checkbox" name="priceFilter" id="priceFilter2" value="60-80"/>XS</label>
-          <label htmlFor="sizeFilter0"><input type="checkbox" name="priceFilter" id="priceFilter2" value="60-80"/>S</label>
-          <label htmlFor="sizeFilter0"><input type="checkbox" name="priceFilter" id="priceFilter2" value="60-80"/>M</label>
-          <label htmlFor="sizeFilter0"><input type="checkbox" name="priceFilter" id="priceFilter2" value="60-80"/>L</label>
-          <label htmlFor="sizeFilter0"><input type="checkbox" name="priceFilter" id="priceFilter2" value="60-80"/>XL</label>
-          </div>
+      <div className="sidemenu-section">
+        <h4>Size</h4>
+        <div className="sidemenu-size-filter">
+          <label htmlFor="sizeFilter0"><input type="checkbox" name="sizeFilter" id="sizeFilter0" value="XXS" /> XXS</label>
+          <label htmlFor="sizeFilter1"><input type="checkbox" name="sizeFilter" id="sizeFilter1" value="XS" /> XS</label>
+          <label htmlFor="sizeFilter2"><input type="checkbox" name="sizeFilter" id="sizeFilter2" value="S" /> S</label>
+          <label htmlFor="sizeFilter3"><input type="checkbox" name="sizeFilter" id="sizeFilter3" value="M" /> M</label>
+          <label htmlFor="sizeFilter4"><input type="checkbox" name="sizeFilter" id="sizeFilter4" value="L" /> L</label>
+          <label htmlFor="sizeFilter5"><input type="checkbox" name="sizeFilter" id="sizeFilter5" value="XL" /> XL</label>
+        </div>
       </div>
     </div>
   );

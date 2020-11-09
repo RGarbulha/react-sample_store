@@ -21,6 +21,9 @@ function App() {
   const closeMenu = () => {
     setState({ ...state, menuState: false })
   }
+  const openMenu = () => {
+    setState({ ...state, menuState: true })
+  }
 
   const removeCartItem = (sku) => {
     console.log("Remove Cart Item")
@@ -39,6 +42,7 @@ function App() {
     menuState: state.menuState,
     menuHandler: menuHandler,
     closeMenu: closeMenu,
+    openMenu: openMenu,
     removeCartItem: removeCartItem,
     addToCart: addToCart,
     clearCart: clearCart
