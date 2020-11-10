@@ -71,6 +71,7 @@ export default function SideNav(props) {
                 name="priceFilter"
                 id={"priceFilter" + i}
                 value={filter.value}
+                onChange={()=>{props.filtersActions.handlePricesFilterChange(props.filters,filter)}}
               />{" "}
               {filter.text}
             </label>

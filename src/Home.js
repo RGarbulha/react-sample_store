@@ -27,14 +27,12 @@ const Home = (props) => {
 
   const resetFilters = (currentFilters) => {
     setFilters({
-        ...currentFilters,
-        orderBy: "Newly Added"
-    })
+      ...currentFilters,
+      orderBy: "Newly Added",
+    });
 
     // console.log("current", currentFilters)
-    currentFilters.orderBy="Newly Added"
-
-    
+    currentFilters.orderBy = "Newly Added";
 
     _.forEach(currentFilters.colorsFilter, (color) => {
       color.active = false;
@@ -57,10 +55,29 @@ const Home = (props) => {
     getProducts(newFilters);
   };
 
+  const handlePricesFilterChange = (filters, price) => {
+    var newPrices = [...filters.pricesFilter];
+    newPrices[newPrices.indexOf(price)].active = !price.active;
+    var newFilters = { ...filters, pricesFilter: newPrices };
+    console.log(newFilters)
+    setFilters(newFilters);
+    getProducts(newFilters);
+  };
+
+  const handleSizeFilterChange = (filters, color) => {
+    var newColors = [...filters.colorsFilter];
+    newColors[newColors.indexOf(color)].active = !color.active;
+    var newFilters = { ...filters, colorsFilter: newColors };
+    setFilters(newFilters);
+    getProducts(newFilters);
+  };
+
   const filtersActions = {
     resetFilters: resetFilters,
     handleOrderFilterChange: handleOrderFilterChange,
     handleColorFilterChange: handleColorFilterChange,
+    handlePricesFilterChange: handlePricesFilterChange,
+    handleSizeFilterChange: handleSizeFilterChange,
   };
 
   const [state, setState] = useState({
@@ -71,10 +88,8 @@ const Home = (props) => {
 
   const orderBy = (prods, order) => {
     var ordered = [];
-    console.log("aqui",order)
     switch (order) {
       case "Newly Added":
-          console.log("newly")
         ordered = _.orderBy(prods, ["dataAdded"]);
         return ordered;
       case "Low to High":
@@ -90,8 +105,11 @@ const Home = (props) => {
 
   const getProducts = (filters = null) => {
     var filtered = data;
-
+    console.log("aqui");
     if (filters) {
+      //Filter By Category
+
+      //Filter By Color
       var activeColors = _.filter(filters.colorsFilter, (color) => {
         return color.active === true;
       });
@@ -106,6 +124,24 @@ const Home = (props) => {
           return include;
         });
       }
+
+      //Filter By Price
+      var activePrice = _.filter(filters.pricesFilter, (price) => {
+        return price.active === true;
+      });
+
+      if (activePrice.length) {
+        filtered = _.filter(filtered, (product) => {
+        //   var include = false;
+
+          console.log("active", activePrice);
+
+        //   return include;
+          return true;
+        });
+      }
+
+      //Filter By Size
 
       var ordered = orderBy(filtered, filters.orderBy);
 
