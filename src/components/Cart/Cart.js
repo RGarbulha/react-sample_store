@@ -25,6 +25,27 @@ const Cart = (props) => {
         <div className="closeBtn" onClick={props.cart.menuHandler}>
           X
         </div>
+        <div className="cart-content">
+          <div className="cart-header">
+            <div>
+              <h5>My Cart</h5>
+            </div>
+            <div>
+              <h5>Checkout >></h5>
+            </div>
+          </div>
+          <hr />
+          <div className="cart-list">
+            <div>product</div>
+          </div>
+          <hr />
+          <div className="cart-footer">
+            <small>Estimate Total</small>
+            <small>
+              <b>$29.99</b>
+            </small>
+          </div>
+        </div>
       </div>
       <div
         className="hiddenMenu"
